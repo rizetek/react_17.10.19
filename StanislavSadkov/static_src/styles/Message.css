@@ -1,0 +1,29 @@
+.message{
+    color: #616161;
+    background: white;
+    max-width: 65%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.message-layout{
+    width: 100%;
+}
+
+.message-bot{
+    align-self: auto;
+}
+
+.message-me{
+    margin-left: auto;
+}
+
+.message-field-gray{
+    color: lightgray;
+}
+
+.message-time{
+    margin-left: auto;
+    width: fit-content;
+}
