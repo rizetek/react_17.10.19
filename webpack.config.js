@@ -5,17 +5,23 @@ module.exports = {
    entry: {
        app: './index.jsx',
    },
-   context: `${__dirname}/static_src`,
+   context: path.resolve(__dirname, "static_src"),
    output: {
-       path: `${__dirname}/static/build`,
+       path: path.resolve(__dirname, "static/build"),
        filename: 'app.js',
    },
-
-    watch: process.argv[process.argv.length - 1] === 'development',
+   devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
+   
+    //watch: process.argv[process.argv.length - 1] === 'development',
 
     module: {
        rules: [
-           {
+            {
                test: /\.(js|jsx)$/,
                include: path.resolve(__dirname, "static_src"),
                exclude: path.resolve(__dirname, "node_modules"),
@@ -31,7 +37,11 @@ module.exports = {
                        ]
                    ]
                }
-           },
+            },
+            {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader',
+            },
        ],
    },
 
